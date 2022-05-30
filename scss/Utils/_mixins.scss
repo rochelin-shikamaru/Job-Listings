@@ -1,0 +1,12 @@
+@mixin flexbox($align: center, $justify: center, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin newFeatured{
+    padding: 7px 6px 4px;
+    color: $secondColors--filter;
+    border-radius: 15px;
+}

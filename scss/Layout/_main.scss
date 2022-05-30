@@ -1,0 +1,186 @@
+main{
+    background-color: $secondColors--background;
+    min-height: calc(100vh - 156px);
+    width: 100%;
+    section{
+        width: Min(90%, 1111px);
+        height: 100%;
+        margin-inline: auto;
+        padding: 50px 0;
+        //border: 1px solid red;
+        aside{
+            width: 100%;
+            min-height: 151px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            box-shadow:  0 3px 8px $thirdColors--veryDark;
+            border-radius: 5px;
+            margin: 23px 0;
+
+            .logoInformation{
+                @include flexbox;
+               // border: 1px solid red;
+                &__logo{
+                    padding: 20px;
+                  //  border: 1px solid green;
+                }
+                &__information{
+                  //  border: 1px solid greenyellow;
+                    p{
+                        span{
+                            display: inline-block;
+                            margin: 5px;
+                        }
+                    }
+                }
+            }
+            .skills{
+               // border: 1px solid red;
+                span{
+                    margin-inline: 5px;
+                }
+            }
+        }
+        
+    }
+}
+// bloc logo + information
+
+.logoInformation__information{
+    &--company{
+        color: $firstColors;
+        font-weight: $font-bold;
+    }
+    &--new{
+        @include newFeatured;
+        background-color: $firstColors;
+        font-weight: $font-bold;
+        font-size: 0.8rem;
+
+    }
+    &--featured{
+        @include newFeatured;
+        background-color: $thirdColors--veryDark;
+        font-weight: $font-bold;
+        font-size: 0.8rem;
+
+    }
+    &--postedAt, &--contract, &--location{
+        color: $thirdColors--dark;
+    }
+    &--position{
+        font-weight: $font-bold;
+        &:hover{
+            color: $firstColors;
+            cursor: pointer;
+        }
+    }
+}
+
+// bloc skills
+.skills{
+    span{
+        color: $firstColors;
+        background-color: $secondColors--filter;
+        width: 100px;
+        height: 30px;
+        margin-bottom: 10px;
+        padding-top: 8px;
+        border-radius: 5px;
+        display: inline-block;
+        text-align: center;
+        font-weight: $font-bold;
+        cursor: pointer;
+        &:hover{
+            color: $secondColors--filter;
+            background-color: $firstColors;
+        }
+
+    }
+}
+
+// mini border
+.mini-border{
+    width: Min(97.8%, 700px);
+    margin: 20px auto 20px 0;
+    height: 1px;
+    background-color: $thirdColors--dark;
+
+    @media screen and (min-width: 801px) {
+        display: none;
+    }
+
+}
+
+// searchBar
+.searchBar{
+    width: 100%;
+    margin-inline: auto;
+    min-height: 70px;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 115px;
+    &__container{
+        width: Min(90%, 1111px);
+        min-height: 70px;
+        margin-inline: auto;
+        padding-inline: 10px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow:  0 3px 8px $thirdColors--veryDark;
+        @include flexbox ($justify: space-between);
+
+        &--clear{
+            color: $firstColors;
+            font-weight: $font-medium;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
+            }
+
+        }
+        &--filter{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+    }
+}
+
+.searchBar__container__element{
+    position: relative;
+    color: $firstColors;
+    background-color: $secondColors--filter;
+    min-width: 30px;
+    height: 30px;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
+    border-radius: 5px;
+    @include flexbox($justify: space-between);
+    font-weight: $font-bold;
+
+    .fa-solid{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 100%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: $secondColors--filter;
+        background-color: $firstColors;
+        @include flexbox;
+        font-size: 1.2rem;
+        cursor: pointer;
+        &:hover{
+            background-color: $thirdColors--veryDark;
+        }
+    }
+
+}
